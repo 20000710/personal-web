@@ -1,0 +1,191 @@
+@use 'variables' as *;
+
+.hero {
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    background-color: $background-1;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    padding: 2em 0 5em 0;
+
+    .title {
+        font-size: 64px;
+        color: $brand-2;
+    }
+
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        .card {
+            background: #1e232a;
+            color: white;
+            width: fit-content;
+            height: fit-content;
+            padding: 2rem 1.5rem;
+            border-radius: 45% 0% 45% 0% / 45% 0% 45% 0%;
+            box-shadow: -6px -4px 5px $brand-1;
+            border: 2px solid white;
+            // box-shadow: ;
+            position: relative;
+            overflow: hidden;
+
+            .card-header {
+                display: flex;
+                justify-content: center;
+                margin: 0 0 1rem 2.5rem;
+            }
+
+            .avatar {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #00e5d1;
+            }
+
+            .card-body {
+                text-align: center;
+
+                .role {
+                    font-family: "IBM Plex Mono", monospace;
+                    font-size: 0.9rem;
+                    color: #bbb;
+                    margin: 0 0 1rem 2.5rem;
+                }
+
+                .info-list {
+                    font-family: "IBM Plex Mono", monospace;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 1rem 0;
+                    font-size: 0.8rem;
+                    text-align: left;
+                }
+
+                .info-list li {
+                    margin-bottom: 0.4rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                    line-height: 3;
+                }
+
+                .skills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: fit-content;
+                    gap: 1rem;
+                    justify-content: start;
+                    margin-bottom: 1.2rem;
+                    padding-right: 1.5rem;
+                }
+
+                .skills span {
+                    background: #00e5d1;
+                    color: #000;
+                    font-weight: 600;
+                    padding: 0.2rem 0.6rem;
+                    border-radius: 1rem;
+                    font-size: 0.7rem;
+                }
+
+                .cv-button {
+                    background: white;
+                    color: #000;
+                    border: none;
+                    padding: 0.5rem 1.2rem;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    border-radius: 2rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                    transition: background 0.3s;
+                }
+
+                .cv-button:hover {
+                    background: #e0e0e0;
+                }
+            }
+
+            .card-body h2 {
+                margin: 0;
+                font-size: 1.4rem;
+                margin-left: 2.5rem;
+            }
+        }
+
+        .mid-content {
+            margin: 0 0 0 4em;
+
+            .tag {
+                display: inline-block;
+                margin: 0;
+                color: $brand-1;
+                font-size: 14px;
+            }
+
+            .description {
+                font-family: "IBM Plex Mono", monospace;
+                color: $white;
+                max-width: 700px;
+            }
+
+            h1 {
+                margin: 0;
+                font-weight: 200;
+                color: $white;
+            }
+
+            span {
+                color: $brand-1;
+            }
+
+            .send-mail {
+                display: flex;
+                width: fit-content;
+                font-family: "IBM Plex Mono", monospace;
+                color: $brand-1;
+
+                cursor: pointer;
+
+                h2 {
+                    font-weight: 400;
+                    font-size: 2em;
+                }
+            }
+
+            .send-mail:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .stats-card {
+            display: flex;
+            border-radius: 80px;
+            align-items: center;
+            justify-content: center;
+            font-family: "IBM Plex Mono", monospace;
+            flex-direction: column;
+            background-color: $background-2;
+            width: 215px;
+
+            h1 {
+                color: $brand-1;
+                font-size: 2em;
+            }
+
+            p {
+                display: inline-block;
+                max-width: 106px;
+                color: $white;
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        }
+    }
+}

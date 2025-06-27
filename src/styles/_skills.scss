@@ -1,0 +1,52 @@
+@use "variables" as *;
+
+.skills-section {
+    scroll-margin-top: -30vh;
+    position: relative;
+    background-color: $background-1;
+    height: 100%;
+    z-index: 1;
+    padding: 4rem 0;
+
+    .code-icon {
+        display: flex;
+        justify-content: end;
+        margin-right: 15rem;
+    }
+
+    .top-content {
+        .underline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00e5d1;
+            border-radius: 50%;
+        }
+
+        .line {
+            height: 2px;
+            width: 60px;
+            background-color: #00e5d1;
+        }
+    }
+}
+
+.skills-section::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url('../assets/background-skills-section.jpg');
+    z-index: 0;
+}

@@ -1,0 +1,82 @@
+@use 'variables' as *;
+
+.navbar {
+    font-family: "IBM Plex Mono", monospace;
+    background-color: $background-1;
+    width: 100%;
+    height: 125px;
+    border-bottom: 1px solid $grey;
+
+    .navbar-content {
+        display: flex;
+        color: $white;
+        height: 125px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .right-side{
+            display: flex;
+
+            .menu-section a{
+            margin: 0 0.75rem;
+            font-size: 20px;
+            color: $white;
+            text-decoration: none;            
+        }
+
+        .menu-section a:hover {
+            color: $brand-1;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: fit-content;
+            height: 2em;
+            margin: 0 2.5em;
+
+            input[type="search"] {
+                border-radius: 24px;
+                box-sizing: border-box;
+                font-size: 14px;
+                width: 170px;
+                height: 30px;
+                outline: none;
+                padding: 0 2.8em 0 1em; 
+            }
+
+            .search-icon {
+                position: absolute;
+                right: 1em;
+                top: 45%;
+                transform: translateY(-50%);
+                height: 1.2em;
+                width: 1.2em;
+                color: #333;
+                flex-shrink: 0;
+            }
+        }
+
+        .social-media {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .instagram,
+            .linkedin,
+            .github {
+                display: flex;
+                margin-right: 1.75rem;
+                align-items: center;
+                color: $white;
+                text-decoration: none;
+
+                label {
+                    margin-left: 0.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+        }
+    }
+}
