@@ -1,6 +1,7 @@
 @use "variables" as *;
 
 .skills-section {
+    text-align: center;
     scroll-margin-top: -30vh;
     position: relative;
     background-color: $background-1;
@@ -15,12 +16,23 @@
     }
 
     .top-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-size: 3.5em;
+            font-weight: 400;
+            width: fit-content;
+            margin: 0;
+            color: $brand-1;
+        }
+
         .underline {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 0.5rem;
-            gap: 0.5rem;
         }
 
         .dot {
@@ -32,8 +44,40 @@
 
         .line {
             height: 2px;
-            width: 60px;
+            width: 110px;
             background-color: #00e5d1;
+        }
+
+        p{
+            font-family: "IBM Plex Mono", monospace;
+            color: $white;
+            margin: 0;
+        }
+    }
+
+    .web-skills {
+        margin-top: 5rem;
+        display: flex;
+        gap: 7rem;
+
+        p {
+            font-size: 2em;
+        }
+
+        .html{
+            color: $html;
+        }
+
+        .css {
+            color: $css;
+        }
+
+        .js {
+            color: $js;
+        }
+
+        .react {
+            color: $react;
         }
     }
 }
