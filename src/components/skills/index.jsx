@@ -5,6 +5,8 @@ import HTMLIcon from '../../assets/html-icon.svg'
 import CSSIcon from '../../assets/css-icon.svg'
 import JSIcon from '../../assets/js-icon.svg'
 import ReactIcon from '../../assets/react-icon.svg'
+import IconMonitor from '../../assets/icon-monitor.svg'
+import IconMobile from '../../assets/icon-mobile.svg'
 
 function Skills() {
   return (
@@ -21,7 +23,16 @@ function Skills() {
             <span class="dot"></span>
           </div>
           <p>I am striving to never stop learning and improving</p>
-
+          <section className="device-skills">
+            <div className="monitor">
+              <img src={IconMonitor} />
+              <p>Web Development</p>
+              <p>HTML<span>.</span>CSS<span>.</span>JS<span>.</span>REACT</p>
+            </div>
+            <div className="mobile">
+              <img src={IconMobile} />
+            </div>
+          </section>
           <section className='web-skills'>
             <div>
               <img src={HTMLIcon}/>

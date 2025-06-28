@@ -29,13 +29,13 @@ function Hero() {
                             <span>JS</span>
                             <span>REACT</span>
                         </div>
-                        <button class="cv-button">
+                        <a href="https://drive.google.com/uc?export=download&id=1CL-lGhHOB2S1E9lnFAegXr9CenZjRX3Z" target='_blank' class="cv-button" download>
                             Download CV
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M.5 9.9V12A1.5 1.5 0 002 13.5h12A1.5 1.5 0 0015.5 12V9.9a.5.5 0 011 0V12a2.5 2.5 0 01-2.5 2.5H2A2.5 2.5 0 01-.5 12V9.9a.5.5 0 011 0z" />
                                 <path d="M7.646 11.854a.5.5 0 00.708 0l3-3a.5.5 0 00-.708-.708L8.5 10.293V1.5a.5.5 0 00-1 0v8.793L5.354 8.146a.5.5 0 10-.708.708l3 3z" />
                             </svg>
-                        </button>
+                        </a>
                     </div>
                 </section>
                 <section className='mid-content'>
