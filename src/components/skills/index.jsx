@@ -26,11 +26,13 @@ function Skills() {
           <section className="device-skills">
             <div className="monitor">
               <img src={IconMonitor} />
-              <p>Web Development</p>
+              <p className='title'>Web Development</p>
               <p>HTML<span>.</span>CSS<span>.</span>JS<span>.</span>REACT</p>
             </div>
             <div className="mobile">
               <img src={IconMobile} />
+              <p className='title'>App Development</p>
+              <p>Flutter.Dart</p>
             </div>
           </section>
           <section className='web-skills'>

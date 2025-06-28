@@ -22,13 +22,13 @@
 
         .card {
             background: #1e232a;
-            color: white;
+            color: $white;
             width: fit-content;
             height: fit-content;
             padding: 2rem 1.5rem;
             border-radius: 45% 0% 45% 0% / 45% 0% 45% 0%;
             box-shadow: -6px -4px 5px $brand-1;
-            border: 2px solid white;
+            border: 2px solid $white;
             // box-shadow: ;
             position: relative;
             overflow: hidden;
@@ -44,7 +44,7 @@
                 height: 80px;
                 border-radius: 50%;
                 object-fit: cover;
-                border: 2px solid #00e5d1;
+                border: 2px solid $brand-1;
             }
 
             .card-body {
@@ -85,7 +85,7 @@
                 }
 
                 .skills span {
-                    background: #00e5d1;
+                    background: $brand-1;
                     color: #000;
                     font-weight: 600;
                     padding: 0.2rem 0.6rem;
@@ -94,8 +94,8 @@
                 }
 
                 .cv-button {
-                    background: white;
-                    color: #000;
+                    background: $white;
+                    color: $grey;
                     width: fit-content;
                     border: none;
                     padding: 0.5rem 1.2rem;

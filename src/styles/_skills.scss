@@ -38,20 +38,43 @@
         .dot {
             width: 8px;
             height: 8px;
-            background-color: #00e5d1;
+            background-color: $brand-1;
             border-radius: 50%;
         }
 
         .line {
             height: 2px;
             width: 110px;
-            background-color: #00e5d1;
+            background-color: $brand-1;
         }
 
-        p{
+        p {
             font-family: "IBM Plex Mono", monospace;
             color: $white;
             margin: 0;
+        }
+    }
+
+    .device-skills {
+        margin-top: 5rem;
+        display: flex;
+        gap: 7rem;
+        position: relative;
+
+        .monitor, .mobile {
+            box-shadow: -8px 0px 5px $css;
+            border-radius: 0 8px 8px 0;
+            padding: 1rem 0;
+            width: 296px;
+            background-color: $brand-2;
+            
+            .title {
+                font-size: 1.25em;
+            }
+
+            p {
+                color: $grey;
+            }
         }
     }
 
@@ -65,7 +88,7 @@
             font-size: 2em;
         }
 
-        .html{
+        .html {
             color: $html;
         }
 
@@ -81,6 +104,7 @@
             color: $react;
         }
     }
+
 }
 
 .skills-section::before {
