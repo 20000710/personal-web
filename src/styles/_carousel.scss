@@ -1,0 +1,352 @@
+// Carousel.scss
+// Variables
+$carousel-height: 500px;
+$carousel-height-mobile: 400px;
+$carousel-height-small: 300px;
+$carousel-border-radius: 16px;
+$carousel-border-radius-mobile: 12px;
+$carousel-border-radius-small: 8px;
+
+$arrow-size: 50px;
+$arrow-size-mobile: 40px;
+$dot-size: 12px;
+$progress-height: 4px;
+
+$transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: 0.3s ease;
+$transition-content: 0.6s ease;
+
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+// Main carousel container
+.carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+// Carousel wrapper
+.carousel {
+  position: relative;
+  width: 100%;
+  height: $carousel-height;
+  overflow: hidden;
+  border-radius: $carousel-border-radius;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: #f8fafc;
+
+  // Carousel slides wrapper
+  &-wrapper {
+    display: flex;
+    height: 100%;
+    will-change: transform;
+  }
+
+  // Individual slide
+  &-slide {
+    position: relative;
+    flex: 0 0 100%;
+    height: 100%;
+    @include flex-center;
+
+    &.active {
+      .slide-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Navigation arrows
+  &-arrow {
+    @include button-reset;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: $arrow-size;
+    height: $arrow-size;
+    @include flex-center;
+    transition: $transition-fast;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &:focus {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+
+    &--left {
+      left: 20px;
+    }
+
+    &--right {
+      right: 20px;
+    }
+  }
+
+  // Dots indicator
+  &-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+  }
+
+  &-dot {
+    @include button-reset;
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    transition: $transition-fast;
+
+    &:hover {
+      border-color: white;
+      transform: scale(1.1);
+    }
+
+    &:focus {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+
+    &--active {
+      background: white;
+      border-color: white;
+      transform: scale(1.2);
+    }
+  }
+
+  // Progress bar
+  &-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $progress-height;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
+
+    &__fill {
+      height: 100%;
+      transition: $transition-smooth;
+    }
+  }
+}
+
+// Slide content styles
+.slide {
+  &-image {
+    @include absolute-full;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-overlay {
+    @include absolute-full;
+    background: linear-gradient(
+      45deg, 
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.1)
+    );
+    z-index: 2;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    padding: 0 40px;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: $transition-content;
+    will-change: opacity, transform;
+  }
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+  }
+
+  &-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+  }
+
+  &-button {
+    @include button-reset;
+    padding: 12px 32px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: $transition-fast;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    &:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-tablet) {
+  .carousel {
+    height: $carousel-height-mobile;
+    border-radius: $carousel-border-radius-mobile;
+
+    &-arrow {
+      width: $arrow-size-mobile;
+      height: $arrow-size-mobile;
+
+      &--left {
+        left: 10px;
+      }
+
+      &--right {
+        right: 10px;
+      }
+    }
+  }
+
+  .slide {
+    &-title {
+      font-size: 2rem;
+    }
+
+    &-description {
+      font-size: 1rem;
+    }
+
+    &-content {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .carousel {
+    height: $carousel-height-small;
+    border-radius: $carousel-border-radius-small;
+  }
+
+  .slide {
+    &-title {
+      font-size: 1.5rem;
+    }
+
+    &-description {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &-button {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Alternative slide animations (optional)
+.carousel-slide {
+  // Uncomment to use alternative animations
+  // &.slide-in-right {
+  //   animation: slideInFromRight 0.6s ease;
+  // }
+  
+  // &.slide-in-left {
+  //   animation: slideInFromLeft 0.6s ease;
+  // }
+}
